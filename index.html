@@ -18,8 +18,25 @@
       }
 
       $(document).ready(function() {
+          //When the main header is pressed, toggle hide all the sections
+          var hide = false;
           $(".welcomeHeader").click(function(){
-            $(".sectionContent").toggle();
+            if(hide) {
+              hide = false;
+              $(".sectionContent").hide();
+            }
+            else{
+              hide = true;
+              $(".sectionContent").show();
+            }
+
+          });
+          //When a Section header is selected, toggle hide that section
+          $(".sectionHeader").click(function(){
+            //for minimizing a section based on its header, the word Header in id can be replaced with Section to get sections ID
+            var thisId = event.currentTarget.id;
+            var childId = "#" + thisId.replace("Header","Section");
+            $(childId).toggle();
           });
 
       });
