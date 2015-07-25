@@ -5,9 +5,6 @@ function main(event) {
   $(".sectionHeader").click(sectionHeaderClicked);
   $(".listItem").click(toggleProjectDescription);
   $(".menuItem").click(menuItemClicked);
-
-
-
 }
 $(document).ready(main);
 
