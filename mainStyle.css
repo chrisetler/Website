@@ -1,0 +1,71 @@
+body{
+	//background-color: #F8F8F8;
+	font-size: 14pt;
+	max-width: 800px;
+}
+
+.welcomeHeader {
+	font-size: 28pt;
+	//background-color: #D5D5D5;
+	//padding: 10px;
+	//border-radius: 0px;
+
+}
+
+.welcomeHeader a {
+	text-decoration: none;
+	color: black;
+	display: block;
+	width: 100%;
+}
+
+h2 {
+	font-size: 28px;
+	border-bottom-color: #222222;
+	border-bottom: solid 2px;
+	margin-bottom: 15px;
+}
+h2 a{
+	color: #000000;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+}
+
+a {
+	color: #696969;
+}
+#projectList {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.listDesc{
+    //border: 1px solid #C0C0C0;
+	padding-bottom: 2px;
+	/*margin-bottom: 2px;*/
+	padding-top: 3px;
+	padding-left: 3px;
+	//background-color: #D5D5D5;
+	/*width: auto;*/
+	border-radius: 2px;
+}
+.listItem {
+	padding: 2px;
+	font-weight: bold;
+	//background-color: #CACACa;
+	//border: 1px solid #BFBFBF;
+	text-decoration: none;
+	color: #111111;
+}
+.listItem a {
+	color: #111111;
+	text-decoration: none;
+	display:block;
+	width:100%;
+}
+
+#footer{
+	margin-top: 20px;
+	border-top: 1px solid black;
+}
