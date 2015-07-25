@@ -1,8 +1,8 @@
 //Put all drivers into here
 function main(event) {
 
-  $(".welcomeHeader").click(toggleAllSections);
-  $(".sectionHeader").click(toggleASection);
+  $(".welcomeHeader").click(homeClicked);
+  $(".sectionHeader").click(sectionHeaderClicked);
   $(".listItem").click(toggleProjectDescription);
   $(".menuItem").click(menuItemClicked);
 
@@ -11,23 +11,22 @@ function main(event) {
 }
 $(document).ready(main);
 
-//Toggle everything. Base decisions off of the first section
-//If the first section is hidden, show all. Otherwise hide all
-var toggleAllSections = function(event) {
-  if($(".sectionContent:first").is(":visible")) {
-    $(".sectionContent").slideUp();
-  }
-  else{
-    $(".sectionContent").slideDown();
-  }
+//When the homepage name is clicked, reset everything to default
+//That is, open all the sections but minimize all the lists
+var homeClicked = function(event) {
+  $(".sectionContent").slideDown();
+  $(".listDesc").slideUp();
 }
 
-//Toggle only the secetion whose header was selected
-var toggleASection = function(event) {
+//When a section header is clicked, minimize the other sections and expand this one
+var sectionHeaderClicked = function(event) {
   //for minimizing a section based on its header, the word Header in id can be replaced with Section to get sections ID
   var thisId = event.currentTarget.id;
   var childId = "#" + thisId.replace("Header","Section");
-  $(childId).slideToggle();
+  $(".sectionContent").not(childId).slideUp();
+  $(".listDesc").not(childId+"* .listDesc").slideUp();
+  $(childId).slideDown();
+  $(childId + "* .listDesc").slideDown();
 }
 
 //Toggle one of the items in the project list
@@ -37,13 +36,12 @@ var toggleProjectDescription = function(event) {
   $(childId).slideToggle();
 }
 
-//when a menut item is clicked, expand it and all of its children
+//when a menu item is clicked, expand it and all of its children
 var menuItemClicked = function(event) {
   var thisId = event.currentTarget.id;
   var sectionId = "#" + thisId.replace("MenuItem","Section");
-  //window.alert(thisId + " " + sectionId);
   $(".sectionContent").not(sectionId).slideUp();
-  $(".listDesc").not(sectionId.replace("Section","List") + " >.listDesc").slideUp();
+  $(".listDesc").not(sectionId + "* .listDesc").slideUp();
   $(sectionId).slideDown();
-  $(sectionId.replace("Section","List") + " >.listDesc").slideDown();
+  $(sectionId + "* .listDesc").slideDown();
 }
