@@ -4,44 +4,7 @@
     <title>My Home Page</title>
     <link rel="stylesheet" type="text/css" href="mainStyle.css" />
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" language="JavaScript">
-      <!--
-      function HideContent(item) {
-        document.getElementById(item).style.display = "none";
-      }
-      function ShowContent(item) {
-        document.getElementById(item).style.display = "block";
-      }
-      function ReverseDisplay(item) {
-        if(document.getElementById(item).style.display == "none") { document.getElementById(item).style.display = "block"; }
-        else { document.getElementById(item).style.display = "none"; }
-      }
-
-      $(document).ready(function() {
-          //When the main header is pressed, toggle hide all the sections
-          var hide = false;
-          $(".welcomeHeader").click(function(){
-            if(hide) {
-              hide = false;
-              $(".sectionContent").hide();
-            }
-            else{
-              hide = true;
-              $(".sectionContent").show();
-            }
-
-          });
-          //When a Section header is selected, toggle hide that section
-          $(".sectionHeader").click(function(){
-            //for minimizing a section based on its header, the word Header in id can be replaced with Section to get sections ID
-            var thisId = event.currentTarget.id;
-            var childId = "#" + thisId.replace("Header","Section");
-            $(childId).toggle();
-          });
-
-      });
-      //-->
-    </script>
+    <script type="text/javascript" language="JavaScript" src="/scripts/main.js"></script>
 
 
 </head>
@@ -69,7 +32,7 @@
     </div>
 
     <div id="projectList">
-      <div class="listItem"><a href="javascript:ReverseDisplay('todoDesc')">Todo List</a></div>
+      <div class="listItem" id="todoHeader"><a href="#">Todo List</a></div>
       <div class="listDesc" id="todoDesc" style="display:none">
         A Java based todo list application that allows the user to specify a description, date and priority for items.
         Items are autosaved to a file that is loaded on startup, and can be imported and exported.
@@ -78,21 +41,21 @@
         <br /><a href="https://github.com/chrisetler/ToDoList">(github)</a>
       </div>
 
-      <div class="listItem"><a href="javascript:ReverseDisplay('mandelDesc')">Mandelbrot Viewer</a></div>
+      <div class="listItem" id="mandelHeader"><a href="#">Mandelbrot Viewer</a></div>
       <div class="listDesc" id="mandelDesc" style="display:none">
         A mandelbrot viewer written in C++ using freeglut and openGL headers. The fractal is only re-rendered refreshed by pressing F5 or Space, making it easy to pan and zoom
         without having to wait for it to reload. Controls: Refresh - F5 or Space, Color Modes - 1-6, Pan - up,down,left,right , Zoom - (+/-)
         <br /><a href="https://github.com/chrisetler/mandelcpp">(github)</a>
       </div>
 
-      <div class="listItem"><a href="javascript:ReverseDisplay('stegDesc')">Image Steganography Applet</a></div>
+      <div class="listItem" id="stegHeader"><a href="#">Image Steganography Applet</a></div>
       <div class="listDesc" id="stegDesc" style="display:none">
         A web applet written in ASP.NET and C# that allows one to hide an image inside another image using a concept known as steganography. I wrote this project as a way
         to familiarize myself with the basics of ASP.NET and html.
         <br /><a href="ImageSteganography/Stenography.aspx">(live)</a> <a href="https://github.com/chrisetler/ImageStegonography">(github)</a>
       </div>
 
-      <div class="listItem"><a href="javascript:ReverseDisplay('hufftextDesc')">Huffman Coding Text Compression Applet</a></div>
+      <div class="listItem" id="hufftextHeader"><a href="#">Huffman Coding Text Compression Applet</a></div>
       <div class="listDesc" id="hufftextDesc" style="display:none"><span id="listDesc">
         A web applet written in ASP.NET and C# that takes in a snippet of text and returns a corresponding dictionary generated using a
         Huffman Coding algorithm, which when used to encode the text would reduce the file size almost down to the entropy of the text.
@@ -101,7 +64,7 @@
         <br /><a href="HuffmanCodingText/HuffmanText.aspx">(live)</a> <a href="https://github.com/chrisetler/HuffmanCodingText">(github)</a>
       </span></div>
 
-      <div class="listItem"><a href="javascript:ReverseDisplay('huffmancDesc')">Huffman Coding Text (in c)</a></div>
+      <div class="listItem" id="huffmancHeader"><a href="#">Huffman Coding Text (in c)</a></div>
       <div class="listDesc" id="huffmancDesc" style="display:none">
         This is a C program that performs the same function as the ASP.NET Huffman Coding applet, but runs much faster.
         <br /><a href="https://github.com/chrisetler/C_Huffman">(github)</a>
