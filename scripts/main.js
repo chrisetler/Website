@@ -1,15 +1,20 @@
 //Put all drivers into here
 function main(event) {
+
   $(".welcomeHeader").click(toggleAllSections);
   $(".sectionHeader").click(toggleASection);
   $(".listItem").click(toggleProjectDescription);
+  $(".menuItem").click(menuItemClicked);
+
+
+
 }
 $(document).ready(main);
 
-//Toggle everything. Base decisions off of the first section (the about section)
-//If about is hidden, show all. Else hide all
+//Toggle everything. Base decisions off of the first section
+//If the first section is hidden, show all. Otherwise hide all
 var toggleAllSections = function(event) {
-  if($("#aboutSection").is(":visible")) {
+  if($(".sectionContent:first").is(":visible")) {
     $(".sectionContent").slideUp();
   }
   else{
@@ -30,4 +35,15 @@ var toggleProjectDescription = function(event) {
   var thisId = event.currentTarget.id;
   var childId = "#" + thisId.replace("Header","Desc");
   $(childId).slideToggle();
+}
+
+//when a menut item is clicked, expand it and all of its children
+var menuItemClicked = function(event) {
+  var thisId = event.currentTarget.id;
+  var sectionId = "#" + thisId.replace("MenuItem","Section");
+  //window.alert(thisId + " " + sectionId);
+  $(".sectionContent").not(sectionId).slideUp();
+  $(".listDesc").not(sectionId.replace("Section","List") + " >.listDesc").slideUp();
+  $(sectionId).slideDown();
+  $(sectionId.replace("Section","List") + " >.listDesc").slideDown();
 }

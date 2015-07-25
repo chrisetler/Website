@@ -1,18 +1,31 @@
+html, body {
+    //margin: 0px;
+    //margin-left: 0px;
+}
+h1 {
+    padding:0;
+    margin:0;
+}
+
 body{
-	//background-color: #0099FF;
 	font-size: 14pt;
-	max-width: 800px;
+	max-width: 1024px;
 	font-family: 'Open Sans', "Segoe UI Light", sans-serif;
 	font-weight: 300;
 }
 
+#topBar {
+	//padding: 10px;
+	margin: 0px;
+  font-size: 28pt;
+	background-color: #051F48;
+}
+
 .welcomeHeader {
 	font-size: 28pt;
-	background-color: #051F48;
-	padding: 10px;
-	//border-radius: 10px;
+  padding: 10px;
+	display: inline-block;
 	font-weight: 500;
-
 }
 
 .welcomeHeader a {
@@ -20,8 +33,24 @@ body{
 	color: white;
 	display: block;
 	width: 100%;
-
-
+}
+/*The selectable items in the top bar*/
+#menuItems{
+	display:inline-block;
+	float:right;
+}
+.menuItem {
+	text-align: right;
+	color:white;
+	position: relative;
+	top: 10px;
+	right: -1px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 16px;
+	margin-left: -10px;
+	background-color: #007ACC;
 }
 
 h2 {
@@ -47,20 +76,14 @@ a {
 }
 
 .listDesc{
-    //border: 1px solid #C0C0C0;
 	padding-bottom: 2px;
-	/*margin-bottom: 2px;*/
 	padding-top: 3px;
 	padding-left: 3px;
-	//background-color: #D5D5D5;
-	/*width: auto;*/
 	border-radius: 2px;
 }
 .listItem {
 	padding: 2px;
 	font-weight: 400;
-	//background-color: #CACACa;
-	//border: 1px solid #BFBFBF;
 	text-decoration: none;
 	color: #111111;
 }
