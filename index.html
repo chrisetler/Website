@@ -3,6 +3,7 @@
 <head>
     <title>My Home Page</title>
     <link rel="stylesheet" type="text/css" href="mainStyle.css" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" language="JavaScript">
       <!--
       function HideContent(item) {
@@ -15,6 +16,13 @@
         if(document.getElementById(item).style.display == "none") { document.getElementById(item).style.display = "block"; }
         else { document.getElementById(item).style.display = "none"; }
       }
+
+      $(document).ready(function() {
+          $(".welcomeHeader").click(function(){
+            $(".sectionContent").toggle();
+          });
+
+      });
       //-->
     </script>
 
@@ -23,12 +31,12 @@
 <body>
   <!-- Title and Page Description -->
 	<div id="welcomeScreen">
-		<h1 class="welcomeHeader"><a href="javascript:ReverseDisplay('allSections')">Christopher Etler</a></h1>
+		<h1 class="welcomeHeader"><a href="#">Christopher Etler</a></h1>
 	</div>
   <div id="allSections">
   <!-- About -->
-  <div id="aboutHeader"><h2><a href="javascript:ReverseDisplay('aboutSection')">About</a></h2></div>
-  <div id="aboutSection">
+  <div class="sectionHeader" id="aboutHeader"><h2><a href="#">About</a></h2></div>
+  <div class="sectionContent" id="aboutSection">
     Hello, my name is Christopher Etler, and I am currently a 3rd year student studying Computer Science and Applied Mathematics
     at Rutgers University - Newark. I graduated from Ocean County College in Spring 2015 and am excited to continue my academic career.
     My interests in computer science vary; I love programming and am looking to make a career out of it, but have not yet been able to
@@ -36,8 +44,8 @@
     overall with a focus on the more mathy side of things.
   </div>
     <!-- List of Prjects -->
-    <div id="projectHeader"><h2><a href="javascript:ReverseDisplay('projectSection')">Projects</a></h2></div>
-    <div id="projectSection">
+    <div class="sectionHeader" id="projectHeader"><h2><a href="#">Projects</a></h2></div>
+    <div class="sectionContent" id="projectSection">
     <div id="projectDescription">
       Here are some of my more <i>presentable</i> projects. For a more comprehensive list,
       feel free to <a href="https://github.com/chrisetler">check out my github page</a>.
