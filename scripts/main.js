@@ -10,10 +10,10 @@ $(document).ready(main);
 //If about is hidden, show all. Else hide all
 var toggleAllSections = function(event) {
   if($("#aboutSection").is(":visible")) {
-    $(".sectionContent").hide();
+    $(".sectionContent").slideUp();
   }
   else{
-    $(".sectionContent").show();
+    $(".sectionContent").slideDown();
   }
 }
 
@@ -22,12 +22,12 @@ var toggleASection = function(event) {
   //for minimizing a section based on its header, the word Header in id can be replaced with Section to get sections ID
   var thisId = event.currentTarget.id;
   var childId = "#" + thisId.replace("Header","Section");
-  $(childId).toggle();
+  $(childId).slideToggle();
 }
 
 //Toggle one of the items in the project list
 var toggleProjectDescription = function(event) {
   var thisId = event.currentTarget.id;
   var childId = "#" + thisId.replace("Header","Desc");
-  $(childId).toggle();
+  $(childId).slideToggle();
 }
